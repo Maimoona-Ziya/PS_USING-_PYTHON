@@ -5,11 +5,12 @@
 #3. CASH DEPOSIT
 #4. EXIT
 
-
+#Greeting the user.
 print("*"*70)
 print("                   WELCOME TO OUR ATM MACHINE !")
 print("*"*70)
 
+#Asking user to insert their card.
 print("Please insert your Credit/Debit Card")
 print("-"*25 +"PROCESSING"+ "-"*29)
 
@@ -17,11 +18,11 @@ print("-"*25 +"PROCESSING"+ "-"*29)
 #Taking PIN as input from user
 pin = input("Enter your 4 digit PIN : ")              #taking input as str to include 0 as leading digit in PIN
 balance = 100000.00
-pin = pin.strip()
+pin = pin.strip()                                     #To remove any leading or trailing spaces
 
 #Checking if the PIN is 4 digits or not.
 if len(pin) == 4 :       
-    #Checking if the PIN entered is numeric or not. 
+    #Checking if the PIN entered is numeric or not. (GEMINI helped me in this logic.)
     numbers = "0123456789"
     if pin[0] in numbers and pin[1] in numbers and pin[2] in numbers and pin[3] in numbers:
 
@@ -45,21 +46,21 @@ if len(pin) == 4 :
                 print("Please collect your cash and card.")
                          
                 #Asking user if they want a receipt or not.
-                receipt_print = input("Do you want a receipt? (YES/NO) : ")
+                receipt_print = input("Do you want a receipt? (Y/N) : ")
             
-                if receipt_print.upper().strip() == "YES" :
+                if receipt_print.upper().strip() == "Y" :
                     print("-"*25 +"RECEIPT"+ "-"*25)
                     print("Amount Withdrawn : ₹", withdraw_amount)
                     print("Remaining balance : ₹",balance)
                     print("-"*25 +"THANK YOU !"+ "-"*25)
             
-                elif receipt_print.upper().strip() == "NO" :
+                elif receipt_print.upper().strip() == "N" :             #To avoid case sensivity and leading/trailing spaces in user input 
                     print("-"*25 +"THANK YOU !"+ "-"*25)
                                 
                 else :
                     print("Invalid input. Please try again.")
                     
-            elif withdraw_amount > balance :
+            elif withdraw_amount > balance :                             #Gemini helped me in including this
                 print("Insufficient balance. Please try again.")
                     
             else: 
@@ -72,14 +73,14 @@ if len(pin) == 4 :
             print("Your current balance is : ₹", balance)
 
             #Asking user if they want a receipt or not.
-            receipt_print = input("Do you want a receipt? (YES/NO) : ")
+            receipt_print = input("Do you want a receipt? (Y/N) : ")
         
-            if receipt_print.upper().strip() == "YES" :
+            if receipt_print.upper().strip() == "Y" :
                 print("-"*25 +"RECEIPT"+ "-"*29)
                 print("Current Balance : ₹",balance)
                 print("-"*25 +"THANK YOU !"+ "-"*25)
 
-            elif receipt_print.upper().strip() == "NO" : 
+            elif receipt_print.upper().strip() == "N" : 
                 print("-"*25 +"THANK YOU !"+ "-"*25)
 
             else :
@@ -95,14 +96,14 @@ if len(pin) == 4 :
             print("-"*25 +"THANK YOU !"+ "-"*40)
 
             #Asking user if they want a receipt or not.
-            receipt_print = input("Do you want a receipt? (YES/NO) : ")
+            receipt_print = input("Do you want a receipt? (Y/N) : ")
                 
-            if receipt_print.upper().strip() == "YES" :
+            if receipt_print.upper().strip() == "Y" :
                 print("-"*25 +"RECEIPT"+ "-"*29)
                 print("Current Balance : ₹",balance)
                 print("-"*25 +"THANK YOU !"+ "-"*25)
             
-            elif receipt_print.upper().strip() == "NO" : 
+            elif receipt_print.upper().strip() == "N" : 
                 print("-"*25 +"THANK YOU !"+ "-"*25)
             
             else :
